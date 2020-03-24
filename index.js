@@ -331,6 +331,10 @@ return `This is a ${getLastCarInfo.car_make} ${getLastCarInfo.car_model}`
 */
 function getCarInfoById(carsArray, carsId) {
 
+  if (carsArray.id = carsId){
+
+    return `This is a ${carsArray[carsId-1].car_make} ${carsArray[carsId-1].car_model}`
+  }
   
 
  
