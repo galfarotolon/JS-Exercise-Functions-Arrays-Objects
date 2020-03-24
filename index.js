@@ -85,11 +85,11 @@ function temperatureCtoF(celsius) {
 function temperatureInF(temp, unit) {
 
   const cel = (temp *(9/5) + 32);
+  const round= (Math.round(cel));
 
   if (unit === "F" || unit === "f"){
     return temp + unit;
   } else if (unit === "C" || unit ==="c"){
-    const round= (Math.round(cel));
     return round + "F";
   }
   /* code here */
@@ -112,7 +112,16 @@ function temperatureInF(temp, unit) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(personId, personName, personEmail) {
+
+  const person = {
+    id: personId,
+    name: personName,
+    email: personEmail
+  }
+  
+  return person;
+
   /* code here */
 }
 
@@ -129,9 +138,20 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(object) {
+
+
+  return "Hello, my name is " + object.name;
+
+
+ 
+  }
+
+ 
+
+
   /* code here */
-}
+
 
 
 /**
@@ -149,7 +169,11 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
+function appleIndex(fruits) {
+
+  
+  const apple = fruits.indexOf("apple");
+  return apple;
   /* code here */
 }
 
@@ -168,8 +192,19 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(fruits) {
+
+ for(let i = 0; i < fruits.length; i++){
+
+   if (fruits[i] === "apple"){
+     fruits[i] = true;
+   } else {
+    fruits[i] = false;
+   }
+ }
+
+  return fruits;
+
 }
 
 
@@ -227,7 +262,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
+
+  const carIndex = inventory[index];
+
   /* code here */
+  return `This is a ${carIndex.car_make} ${carIndex.car_model}`
 }
 
 /**
